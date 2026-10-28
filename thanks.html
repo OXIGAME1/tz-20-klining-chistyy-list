@@ -9,7 +9,13 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-TCNW88BN83');
+  // Режим отладки для DebugView: включается адресом ?debug_mode=1 и держится до закрытия вкладки.
+  var gaDebug = false;
+  try {
+    if (/[?&]debug_mode=1/.test(location.search)) sessionStorage.setItem('ga_debug', '1');
+    gaDebug = sessionStorage.getItem('ga_debug') === '1';
+  } catch (e) {}
+  gtag('config', 'G-TCNW88BN83', gaDebug ? { debug_mode: true } : {});
 </script>
 <title>Спасибо за заказ — Чистый лист</title>
 <meta name="description" content="Заказ уборки принят. Номер заказа, дата и сумма, как подготовиться к приезду бригады.">
