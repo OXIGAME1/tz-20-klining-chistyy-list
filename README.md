@@ -3,7 +3,7 @@
 | Что | Ссылка |
 |---|---|
 | Сайт на Vercel | https://tz-20-klining-chistyy-list.vercel.app |
-| Таблица заявок «ChistyList — Orders» | ___ |
+| Таблица заявок «ChistyList — Orders» | https://docs.google.com/spreadsheets/d/1MYLZ5ozAAUECOPnRTeA8WHUX1SgO3LFF-N-rViOfo4U/edit |
 | Дашборд DataLens | ___ |
 | Instagram | ___ |
 | ВКонтакте | ___ |
