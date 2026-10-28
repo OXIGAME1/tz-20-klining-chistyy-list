@@ -1,0 +1,287 @@
+/* ЧИСТЫЙ ЛИСТ — общие стили сайта */
+:root {
+  --brand: #1592B5;        /* бирюзово-синий, фирменный */
+  --brand-dark: #0E6F8C;   /* для кнопок и текста: контраст с белым выше 4.5:1 */
+  --green: #7DCB6A;        /* свежий зелёный */
+  --green-soft: #E9F6E5;
+  --ink: #1E2A30;          /* графит */
+  --muted: #4E5F68;
+  --line: #D9E3E8;
+  --bg: #FFFFFF;
+  --bg-soft: #F2F8FA;
+  --error: #B42318;
+  --radius: 14px;
+  --shadow: 0 6px 24px rgba(30, 42, 48, .08);
+  --wrap: 1160px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+  overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; display: block; }
+[hidden] { display: none !important; }
+a { color: var(--brand-dark); }
+h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; line-height: 1.2; margin: 0 0 .6em; }
+h1 { font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 800; }
+h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; }
+h3 { font-size: 1.15rem; font-weight: 700; }
+p { margin: 0 0 1em; }
+
+.wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 16px; }
+.section { padding: 56px 0; }
+.section--soft { background: var(--bg-soft); }
+.lead { font-size: 1.1rem; color: var(--muted); max-width: 720px; }
+.muted { color: var(--muted); }
+.small { font-size: .9rem; }
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+.skip-link { position: absolute; left: -999px; top: 8px; background: var(--ink); color: #fff; padding: 8px 12px; z-index: 100; }
+.skip-link:focus { left: 8px; }
+:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+
+/* ---------- Кнопки ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; min-width: 44px; padding: 12px 24px;
+  border-radius: 999px; border: 2px solid var(--brand-dark);
+  background: var(--brand-dark); color: #fff;
+  font: 600 1rem/1.2 "Montserrat", sans-serif; text-decoration: none; cursor: pointer;
+  transition: background .2s, transform .1s;
+}
+.btn:hover { background: #0B5B73; }
+.btn:active { transform: translateY(1px); }
+.btn[disabled] { opacity: .6; cursor: wait; }
+.btn--ghost { background: transparent; color: var(--brand-dark); }
+.btn--ghost:hover { background: var(--bg-soft); }
+.btn--green { background: var(--green); border-color: var(--green); color: var(--ink); }
+.btn--green:hover { background: #6BB958; }
+.btn--block { width: 100%; }
+
+/* ---------- Шапка ---------- */
+.header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(6px); }
+.header__inner { display: flex; align-items: center; gap: 16px; min-height: 68px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); margin-right: auto; }
+.logo__mark { width: 36px; height: 36px; flex: none; }
+.logo__name { font: 800 1.1rem/1 "Montserrat", sans-serif; letter-spacing: .06em; }
+.logo__sub { display: block; font-size: .72rem; color: var(--muted); letter-spacing: 0; font-weight: 400; margin-top: 3px; }
+.nav__list { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; }
+.nav__link {
+  display: flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 10px;
+  color: var(--ink); text-decoration: none; font-weight: 500; font-size: .95rem;
+}
+.nav__link:hover { background: var(--bg-soft); }
+.nav__link[aria-current="page"] { background: var(--brand-dark); color: #fff; }
+.header__phone { font-weight: 700; text-decoration: none; color: var(--ink); white-space: nowrap; min-height: 44px; display: flex; align-items: center; }
+.nav-toggle {
+  display: none; width: 48px; height: 48px; border: 1px solid var(--line); border-radius: 12px;
+  background: #fff; cursor: pointer; align-items: center; justify-content: center;
+}
+.nav-toggle span, .nav-toggle span::before, .nav-toggle span::after {
+  display: block; width: 22px; height: 2px; background: var(--ink); position: relative; content: "";
+}
+.nav-toggle span::before { position: absolute; top: -7px; }
+.nav-toggle span::after { position: absolute; top: 7px; }
+
+@media (max-width: 1100px) {
+  .nav-toggle { display: inline-flex; }
+  .header__phone { display: none; }
+  .nav { position: absolute; top: 100%; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--line); display: none; box-shadow: var(--shadow); }
+  .nav.is-open { display: block; }
+  .nav__list { flex-direction: column; padding: 8px 16px 16px; }
+  .nav__link { min-height: 48px; }
+}
+
+/* ---------- Первый экран ---------- */
+.hero { background: linear-gradient(135deg, #E8F5F9 0%, #F3FAF1 100%); padding: 56px 0 64px; }
+.hero__grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: center; }
+.badge { display: inline-block; background: var(--green-soft); color: #2F6B23; border: 1px solid #BFE3B4; font-weight: 600; font-size: .9rem; padding: 6px 12px; border-radius: 999px; margin-bottom: 16px; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.hero__card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; }
+.hero__card ul { margin: 0; padding-left: 20px; }
+.hero__card li { margin-bottom: 8px; }
+.price-big { font: 800 2rem/1 "Montserrat", sans-serif; color: var(--brand-dark); }
+
+/* ---------- Карточки ---------- */
+.grid { display: grid; gap: 20px; }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.card {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.card--link { cursor: pointer; text-decoration: none; color: inherit; transition: box-shadow .2s, border-color .2s; }
+.card--link:hover { box-shadow: var(--shadow); border-color: var(--brand); }
+.card__icon { width: 48px; height: 48px; border-radius: 12px; background: var(--bg-soft); display: grid; place-items: center; color: var(--brand-dark); }
+.card__price { font: 700 1.2rem/1.2 "Montserrat", sans-serif; color: var(--brand-dark); margin-top: auto; }
+.card ul { margin: 0; padding-left: 18px; }
+.card li { margin-bottom: 4px; }
+
+/* ---------- Что входит (раскрывающиеся блоки) ---------- */
+.faq details { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; margin-bottom: 12px; }
+.faq summary {
+  cursor: pointer; list-style: none; padding: 16px 52px 16px 20px; min-height: 56px; position: relative;
+  font: 600 1.05rem/1.4 "Montserrat", sans-serif;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--brand-dark); }
+.faq details[open] summary::after { content: "−"; }
+.faq .faq__body { padding: 0 20px 16px; }
+.faq ul { margin: 0; padding-left: 20px; }
+
+/* ---------- Галерея до/после ---------- */
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.gallery__item { border: 0; padding: 0; background: none; cursor: pointer; text-align: left; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.gallery__pair { display: grid; grid-template-columns: 1fr 1fr; }
+.gallery__pair img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+.gallery__caption { display: block; padding: 10px 14px; background: #fff; font-weight: 600; color: var(--ink); font-family: "Inter", sans-serif; }
+.lightbox { position: fixed; inset: 0; background: rgba(15, 22, 26, .85); display: none; align-items: center; justify-content: center; padding: 16px; z-index: 200; }
+.lightbox.is-open { display: flex; }
+.lightbox__inner { background: #fff; border-radius: var(--radius); max-width: 960px; width: 100%; padding: 16px; }
+.lightbox__pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.lightbox__pair figure { margin: 0; }
+.lightbox__pair figcaption { text-align: center; font-weight: 600; padding-top: 6px; }
+.lightbox__close { float: right; }
+
+/* ---------- Формы ---------- */
+.form { display: grid; gap: 16px; }
+.field { display: grid; gap: 6px; }
+.field label, .field legend { font-weight: 600; }
+.field input, .field select, .field textarea {
+  width: 100%; min-height: 48px; padding: 10px 14px; border: 1.5px solid #9FB2BC; border-radius: 10px;
+  font: inherit; color: var(--ink); background: #fff;
+}
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--brand); outline: none; box-shadow: 0 0 0 3px rgba(21,146,181,.2); }
+.field.has-error input, .field.has-error select { border-color: var(--error); background: #FFF6F5; }
+.field__error { color: var(--error); font-size: .9rem; min-height: 0; }
+.field__hint { color: var(--muted); font-size: .88rem; }
+.check { display: flex; gap: 12px; align-items: flex-start; }
+.check input { width: 24px; height: 24px; min-height: 24px; margin: 2px 0 0; flex: none; accent-color: var(--brand-dark); }
+.check.has-error { color: var(--error); }
+.notice { background: #FFF8E6; border: 1px solid #F1D48A; border-radius: 10px; padding: 12px 14px; font-size: .95rem; }
+.notice--info { background: var(--bg-soft); border-color: var(--line); }
+.form-status { font-weight: 600; }
+.form-status.is-error { color: var(--error); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+/* ---------- Калькулятор ---------- */
+.calc { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; align-items: start; }
+.panel { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; margin-bottom: 20px; }
+.panel h2 { font-size: 1.25rem; }
+.options { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.option { position: relative; }
+.option input { position: absolute; opacity: 0; inset: 0; }
+.option span {
+  display: flex; flex-direction: column; justify-content: center; min-height: 64px; padding: 10px 14px;
+  border: 1.5px solid var(--line); border-radius: 12px; cursor: pointer; background: #fff; height: 100%;
+}
+.option small { color: var(--muted); }
+.option input:checked + span { border-color: var(--brand-dark); background: #E8F5F9; box-shadow: inset 0 0 0 1px var(--brand-dark); }
+.option input:focus-visible + span { outline: 3px solid var(--green); outline-offset: 2px; }
+.option input:disabled + span { opacity: .45; cursor: not-allowed; }
+.range-row { display: flex; gap: 12px; align-items: center; }
+.range-row input[type="range"] { flex: 1; min-height: 44px; accent-color: var(--brand-dark); }
+.range-row input[type="number"] { width: 110px; }
+.extras { display: grid; gap: 10px; }
+.extra { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 12px; min-height: 56px; }
+.extra label { display: flex; align-items: center; gap: 12px; flex: 1; cursor: pointer; }
+.extra input[type="checkbox"] { width: 24px; height: 24px; accent-color: var(--brand-dark); flex: none; }
+.extra__price { color: var(--muted); white-space: nowrap; }
+.qty { display: flex; align-items: center; gap: 6px; }
+.qty input { width: 64px; min-height: 44px; text-align: center; border: 1.5px solid #9FB2BC; border-radius: 10px; font: inherit; }
+.summary { position: sticky; top: 88px; background: var(--ink); color: #fff; border-radius: var(--radius); padding: 24px; }
+.summary h2 { color: #fff; font-size: 1.25rem; }
+.summary dl { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; margin: 0 0 16px; }
+.summary dt { color: #C9D6DC; }
+.summary dd { margin: 0; text-align: right; font-weight: 600; }
+.summary__total { font: 800 2rem/1.1 "Montserrat", sans-serif; color: var(--green); margin-bottom: 4px; }
+.summary .btn { margin-top: 12px; }
+.summary .muted { color: #C9D6DC; }
+
+/* ---------- Подписка ---------- */
+.freq { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.freq__btn {
+  text-align: left; padding: 22px; border-radius: var(--radius); border: 2px solid var(--line); background: #fff;
+  cursor: pointer; font: inherit; color: var(--ink); min-height: 44px;
+}
+.freq__btn[aria-pressed="true"] { border-color: var(--brand-dark); background: #E8F5F9; }
+.freq__discount { display: inline-block; background: var(--green); color: var(--ink); font-weight: 700; border-radius: 999px; padding: 2px 10px; }
+.saving { font: 800 2.2rem/1.1 "Montserrat", sans-serif; color: var(--brand-dark); }
+
+/* ---------- Дата ---------- */
+.dates { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+.date-btn, .time-btn {
+  min-height: 56px; border: 1.5px solid var(--line); border-radius: 12px; background: #fff; cursor: pointer;
+  font: inherit; color: var(--ink); padding: 6px 4px; line-height: 1.2;
+}
+.date-btn small { display: block; color: var(--muted); font-size: .78rem; }
+.date-btn[aria-pressed="true"], .time-btn[aria-pressed="true"] { border-color: var(--brand-dark); background: var(--brand-dark); color: #fff; }
+.date-btn[aria-pressed="true"] small { color: #DDEFF5; }
+.times { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 12px; }
+.picked { margin-top: 12px; font-weight: 600; }
+
+/* ---------- Контакты ---------- */
+.contact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.contact-list a { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; font-weight: 600; text-decoration: none; }
+.messengers { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* ---------- Промокод ---------- */
+.promo { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; background: var(--green-soft); border: 2px dashed var(--green); border-radius: var(--radius); padding: 18px; }
+.promo__code { font: 800 1.6rem/1 "Montserrat", monospace; letter-spacing: .08em; }
+
+/* ---------- Чек-лист по дням ---------- */
+.days { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.day { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
+.day h3 { color: var(--brand-dark); }
+.day ul { margin: 0; padding-left: 18px; }
+
+/* ---------- Подвал ---------- */
+.footer { background: var(--ink); color: #DCE5E9; padding: 40px 0 24px; margin-top: 0; }
+.footer a { color: #fff; }
+.footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 24px; }
+.footer h2 { color: #fff; font-size: 1rem; }
+.footer ul { list-style: none; margin: 0; padding: 0; }
+.footer li a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; }
+.socials { display: flex; flex-wrap: wrap; gap: 10px; }
+.socials a { width: 48px; height: 48px; border-radius: 12px; background: rgba(255,255,255,.08); display: grid; place-items: center; }
+.socials a:hover { background: var(--brand-dark); }
+.socials svg { width: 22px; height: 22px; fill: #fff; }
+.footer__bottom { border-top: 1px solid rgba(255,255,255,.12); margin-top: 24px; padding-top: 16px; font-size: .85rem; color: #AFC0C7; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+
+/* ---------- Прочее ---------- */
+.steps { counter-reset: s; list-style: none; padding: 0; display: grid; gap: 12px; }
+.steps li { counter-increment: s; position: relative; padding-left: 52px; min-height: 40px; }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 38px; height: 38px; border-radius: 50%; background: var(--green-soft); color: #2F6B23; display: grid; place-items: center; font-weight: 700; }
+.order-box { background: var(--bg-soft); border-radius: var(--radius); padding: 22px; }
+.order-box dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; margin: 0; }
+.order-box dt { color: var(--muted); }
+.order-box dd { margin: 0; font-weight: 600; word-break: break-word; }
+.policy h2 { font-size: 1.25rem; margin-top: 1.6em; }
+.center { text-align: center; }
+.mt { margin-top: 24px; }
+
+@media (max-width: 900px) {
+  .hero__grid, .calc, .footer__grid { grid-template-columns: 1fr; }
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .summary { position: static; }
+  .dates { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 600px) {
+  .section { padding: 40px 0; }
+  .grid--3, .grid--2, .gallery, .freq, .form-row { grid-template-columns: 1fr; }
+  .dates { grid-template-columns: repeat(3, 1fr); }
+  .times { grid-template-columns: repeat(2, 1fr); }
+  .lightbox__pair { grid-template-columns: 1fr; }
+  .hero__actions .btn { width: 100%; }
+  .logo__sub { display: none; }
+}
