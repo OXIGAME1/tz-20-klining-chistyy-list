@@ -192,15 +192,7 @@ function setupUtmSheet() {
     ['U-01', 'Instagram', 'ссылка в шапке профиля', 'instagram', 'social', 'newyear_cleaning_2026', 'bio', 'index.html'],
     ['U-02', 'Instagram', 'автоответ под Reel (ManyChat)', 'instagram', 'social', 'newyear_cleaning_2026', 'reel_kitchen_01', 'tips.html'],
     ['U-03', 'Instagram', 'автоответ, ветка «ОФИС»', 'instagram', 'social', 'office_cleaning_2026', 'reel_kitchen_01_office', 'office.html'],
-    ['U-04', 'Instagram', 'ссылка-стикер в Stories', 'instagram', 'social', 'newyear_cleaning_2026', 'stories_01', 'calculator.html'],
-    ['U-05', 'ВКонтакте', 'пост в сообществе', 'vk', 'social', 'newyear_cleaning_2026', 'post_01', 'calculator.html'],
-    ['U-06', 'ВКонтакте', 'пост в группе жилого комплекса', 'vk', 'social', 'subscription_2026', 'residential_group', 'subscription.html'],
-    ['U-07', 'Telegram', 'пост в канале', 'telegram', 'social', 'newyear_cleaning_2026', 'post_01', 'tips.html'],
-    ['U-08', 'Telegram', 'сообщение в чате дома', 'telegram', 'social', 'newyear_cleaning_2026', 'house_chat', 'calculator.html'],
-    ['U-09', 'YouTube', 'описание Shorts «Кухня до и после»', 'youtube', 'social', 'newyear_cleaning_2026', 'shorts_kitchen_01', 'services.html'],
-    ['U-10', 'Блогер 1', 'ссылка у партнёра', 'nik_blogera_1', 'affiliate', 'newyear_cleaning_2026', 'stories_01', 'calculator.html'],
-    ['U-11', 'Блогер 2', 'ссылка у партнёра', 'nik_blogera_2', 'affiliate', 'newyear_cleaning_2026', 'post_01', 'subscription.html'],
-    ['U-12', 'Магниты', 'QR-код на магните, который оставляет бригада', 'magnet_qr', 'qr', 'subscription_2026', 'fridge_magnet', 'subscription.html']
+    ['U-04', 'Instagram', 'ссылка-стикер в Stories', 'instagram', 'social', 'newyear_cleaning_2026', 'stories_01', 'calculator.html']
   ];
   const ss = SpreadsheetApp.openById(SHEET_ID);
   const sheet = ss.getSheetByName('utm') || ss.insertSheet('utm');
