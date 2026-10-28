@@ -7,7 +7,7 @@
   'use strict';
 
   // Адрес веб-приложения Apps Script (Развернуть → Веб-приложение → URL, оканчивается на /exec).
-  var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/ВСТАВЬТЕ_ID_РАЗВЁРТЫВАНИЯ/exec';
+  var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxZ4FKLxUJLOhBLXHNpBlUA7Scvzmf0V689e6kY3rOSZKpg9_CcgX1UKKTGzcVecDJd/exec';
 
   var TYPES = ['regular', 'deep', 'after_repair', 'windows', 'upholstery'];
   var WEEKDAYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
