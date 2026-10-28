@@ -2,7 +2,7 @@
 
 | Что | Ссылка |
 |---|---|
-| Сайт на Vercel | https://tz-20-klining-chistyy-list.vercel.app _(проверить фактический адрес)_ |
+| Сайт на Vercel | https://tz-20-klining-chistyy-list.vercel.app |
 | Таблица заявок «ChistyList — Orders» | ___ |
 | Дашборд DataLens | ___ |
 | Instagram | ___ |
@@ -11,7 +11,7 @@
 | YouTube | ___ |
 | Reel с автоответами | ___ |
 
-Идентификатор ресурса GA4: `G-XXXXXXXXXX`
+Идентификатор ресурса GA4: `G-TCNW88BN83`
 
 Доступ Viewer к ресурсу GA4 выдан: ___ (e-mail Заказчика)
 
@@ -27,7 +27,7 @@
 
 ## Настройка перед публикацией
 
-1. **GA4.** Во всех `*.html` замените `G-XXXXXXXXXX` на идентификатор своего ресурса (поиск и замена по папке).
+1. **GA4.** Тег `G-TCNW88BN83` уже стоит во всех `*.html`. Для DebugView откройте сайт с `?debug_mode=1`.
 2. **Таблица и приёмник.** Создайте таблицу «ChistyList — Orders» → Расширения → Apps Script → вставьте `apps-script/Code.gs`, впишите `SHEET_ID`, запустите `setupSheet`, разверните как веб-приложение (доступ — все). URL `…/exec` вставьте в `APPS_SCRIPT_URL` в `js/form.js`.
 3. **Соцсети.** Ссылки в подвале и на `thanks.html` (сейчас `chisty_list_clean`) замените на страницы, созданные для проекта.
 4. **Адрес сайта.** Если Vercel выдал другой адрес — замените `tz-20-klining-chistyy-list.vercel.app` в `<head>` страниц, `robots.txt`, `sitemap.xml` и `docs/utm.csv`.
