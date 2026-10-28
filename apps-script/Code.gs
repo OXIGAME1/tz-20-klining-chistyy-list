@@ -5,14 +5,14 @@
  *
  * Установка:
  * 1. Откройте таблицу → Расширения → Apps Script, вставьте этот код.
- * 2. В SHEET_ID вставьте идентификатор таблицы (часть адреса между /d/ и /edit).
- * 3. Один раз запустите функцию setupSheet (заголовки, списки, подсветка).
+ * 2. SHEET_ID — идентификатор таблицы (часть адреса между /d/ и /edit).
+ * 3. Один раз запустите setupSheet (лист leads: заголовки, списки, подсветка) и setupUtmSheet (реестр ссылок).
  * 4. Развернуть → Новое развёртывание → Веб-приложение:
  *    «Выполнять как» — я, «Доступ» — все. Полученный URL вставьте в js/form.js.
  * После каждого изменения кода: Развернуть → Управление развёртываниями → Изменить → Новая версия.
  */
 
-const SHEET_ID = 'ВСТАВЬТЕ_ИДЕНТИФИКАТОР_ТАБЛИЦЫ';
+const SHEET_ID = '1MYLZ5ozAAUECOPnRTeA8WHUX1SgO3LFF-N-rViOfo4U';
 const SHEET_NAME = 'leads';
 const TIMEZONE = 'Europe/Moscow';
 
@@ -139,8 +139,13 @@ function json_(obj) {
  */
 function setupSheet() {
   const ss = SpreadsheetApp.openById(SHEET_ID);
+  ss.rename('ChistyList — Orders');
   ss.setSpreadsheetTimeZone(TIMEZONE);
-  const sheet = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
+  // В новой таблице первый лист называется «Лист1» — переименовываем его в leads.
+  let sheet = ss.getSheetByName(SHEET_NAME);
+  if (!sheet) {
+    sheet = ss.getSheets()[0].getLastRow() === 0 ? ss.getSheets()[0].setName(SHEET_NAME) : ss.insertSheet(SHEET_NAME);
+  }
 
   sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]).setFontWeight('bold');
   sheet.setFrozenRows(1);
@@ -175,4 +180,41 @@ function setupSheet() {
   });
   sheet.setConditionalFormatRules(rules);
   sheet.autoResizeColumns(1, HEADERS.length);
+}
+
+/**
+ * Однократное создание листа utm — реестр ссылок (раздел 5.2–5.3 ТЗ).
+ * Полная ссылка собирается формулой из столбцов меток, вручную не набирается.
+ */
+function setupUtmSheet() {
+  const SITE = 'https://tz-20-klining-chistyy-list.vercel.app/';
+  const rows = [
+    ['U-01', 'Instagram', 'ссылка в шапке профиля', 'instagram', 'social', 'newyear_cleaning_2026', 'bio', 'index.html'],
+    ['U-02', 'Instagram', 'автоответ под Reel (ManyChat)', 'instagram', 'social', 'newyear_cleaning_2026', 'reel_kitchen_01', 'tips.html'],
+    ['U-03', 'Instagram', 'автоответ, ветка «ОФИС»', 'instagram', 'social', 'office_cleaning_2026', 'reel_kitchen_01_office', 'office.html'],
+    ['U-04', 'Instagram', 'ссылка-стикер в Stories', 'instagram', 'social', 'newyear_cleaning_2026', 'stories_01', 'calculator.html'],
+    ['U-05', 'ВКонтакте', 'пост в сообществе', 'vk', 'social', 'newyear_cleaning_2026', 'post_01', 'calculator.html'],
+    ['U-06', 'ВКонтакте', 'пост в группе жилого комплекса', 'vk', 'social', 'subscription_2026', 'residential_group', 'subscription.html'],
+    ['U-07', 'Telegram', 'пост в канале', 'telegram', 'social', 'newyear_cleaning_2026', 'post_01', 'tips.html'],
+    ['U-08', 'Telegram', 'сообщение в чате дома', 'telegram', 'social', 'newyear_cleaning_2026', 'house_chat', 'calculator.html'],
+    ['U-09', 'YouTube', 'описание Shorts «Кухня до и после»', 'youtube', 'social', 'newyear_cleaning_2026', 'shorts_kitchen_01', 'services.html'],
+    ['U-10', 'Блогер 1', 'ссылка у партнёра', 'nik_blogera_1', 'affiliate', 'newyear_cleaning_2026', 'stories_01', 'calculator.html'],
+    ['U-11', 'Блогер 2', 'ссылка у партнёра', 'nik_blogera_2', 'affiliate', 'newyear_cleaning_2026', 'post_01', 'subscription.html'],
+    ['U-12', 'Магниты', 'QR-код на магните, который оставляет бригада', 'magnet_qr', 'qr', 'subscription_2026', 'fridge_magnet', 'subscription.html']
+  ];
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  const sheet = ss.getSheetByName('utm') || ss.insertSheet('utm');
+  sheet.clear();
+  sheet.getRange(1, 1, 1, 13).setValues([[
+    'номер', 'канал', 'размещение', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+    'страница', 'полная ссылка', 'короткая ссылка', 'адрес публикации', 'дата публикации'
+  ]]).setFontWeight('bold');
+  rows.forEach(function (r, i) {
+    const n = i + 2;
+    sheet.getRange(n, 1, 1, 9).setValues([[r[0], r[1], r[2], r[3], r[4], r[5], r[6], '', r[7]]]);
+    sheet.getRange(n, 10).setFormula('="' + SITE + '"&I' + n + '&"?utm_source="&D' + n + '&"&utm_medium="&E' + n +
+      '&"&utm_campaign="&F' + n + '&"&utm_content="&G' + n);
+  });
+  sheet.setFrozenRows(1);
+  sheet.autoResizeColumns(1, 13);
 }
