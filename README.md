@@ -6,9 +6,6 @@
 | Таблица заявок «ChistyList — Orders» | https://docs.google.com/spreadsheets/d/1MYLZ5ozAAUECOPnRTeA8WHUX1SgO3LFF-N-rViOfo4U/edit |
 | Дашборд DataLens | ___ |
 | Instagram | ___ |
-| ВКонтакте | ___ |
-| Telegram | ___ |
-| YouTube | ___ |
 | Reel с автоответами | ___ |
 
 Идентификатор ресурса GA4: `G-TCNW88BN83`
@@ -29,17 +26,16 @@
 
 1. **GA4.** Тег `G-TCNW88BN83` уже стоит во всех `*.html`. Для DebugView откройте сайт с `?debug_mode=1`.
 2. **Таблица и приёмник.** Создайте таблицу «ChistyList — Orders» → Расширения → Apps Script → вставьте `apps-script/Code.gs`, впишите `SHEET_ID`, запустите `setupSheet`, разверните как веб-приложение (доступ — все). URL `…/exec` вставьте в `APPS_SCRIPT_URL` в `js/form.js`.
-3. **Соцсети.** Ссылки в подвале и на `thanks.html` (сейчас `chisty_list_clean`) замените на страницы, созданные для проекта.
+3. **Соцсети.** Ссылку на Instagram в подвале и на `thanks.html` замените на профиль, созданный для проекта.
 4. **Адрес сайта.** Если Vercel выдал другой адрес — замените `tz-20-klining-chistyy-list.vercel.app` в `<head>` страниц, `robots.txt`, `sitemap.xml` и `docs/utm.csv`.
-5. **Блогеры.** В `docs/utm.csv` замените `nik_blogera_1` и `nik_blogera_2` на ники однокурсников латиницей.
+
+## Объём работ по каналам
+
+По решению преподавателя размещение ссылок выполняется только в Instagram: строки реестра U-01…U-04 и автоответы ManyChat (U-02, U-03). ВКонтакте, Telegram, YouTube, блогеры и QR-код на магните (U-05…U-12) из задания исключены, поэтому короткие ссылки, `docs/qr-u-12.png` и `docs/afisha.pdf` не создаются.
 
 ## Реестр ссылок: выбор страниц и меток
 
-- U-04 Stories → `utm_content=stories_01`.
-- U-06 группа ЖК → `utm_campaign=subscription_2026`: пост для соседей ведёт на подписку, повод — регулярная уборка, как у магнитов U-12.
-- U-08 чат дома → `utm_medium=social`.
-- U-09 Shorts → `utm_content=shorts_kitchen_01`.
-- U-10 / U-11 → `utm_content=stories_01` / `post_01` (формат размещения у партнёра).
+- U-04 Stories → `utm_content=stories_01`: первый Stories кампании, по правилу 5.1.4 (`stories_01`).
 
 ## Решения по калькулятору
 
