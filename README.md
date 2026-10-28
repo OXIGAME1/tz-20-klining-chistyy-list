@@ -5,8 +5,8 @@
 | Сайт на Vercel | https://tz-20-klining-chistyy-list.vercel.app |
 | Таблица заявок «ChistyList — Orders» | https://docs.google.com/spreadsheets/d/1MYLZ5ozAAUECOPnRTeA8WHUX1SgO3LFF-N-rViOfo4U/edit |
 | Дашборд DataLens | ___ |
-| Instagram | ___ |
-| Reel с автоответами | ___ |
+| Instagram | https://www.instagram.com/nzzerae/ |
+| Reel с автоответами | https://www.instagram.com/nzzerae/reel/DfDUep7ObLp/ |
 
 Идентификатор ресурса GA4: `G-TCNW88BN83`
 
