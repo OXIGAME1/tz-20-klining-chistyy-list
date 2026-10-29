@@ -10,8 +10,8 @@
 | 2 | `scroll` | авто | Прокрутка до 90 % | расширенная статистика GA4 (кода нет) | percent_scrolled: 90 |
 | 3 | `click` | авто | Переход на внешний сайт (соцсети, Telegram, WhatsApp) | расширенная статистика GA4 (кода нет) | link_url: https://t.me/chisty_list_manager; outbound: true |
 | 4 | `file_download` | авто | Скачивание PDF | services.html:73<br>tips.html:73 | file_name: /files/chek-list-rabot.pdf; file_extension: pdf |
-| 5 | `form_start` | авто | Первое взаимодействие с формой заказа | contacts.html:82 | form_id: order-form |
-| 6 | `form_submit` | авто | Отправка формы заказа | contacts.html:82 | form_id: order-form |
+| 5 | `form_start` | авто → своё | Первое взаимодействие с формой заказа. Расширенная статистика не фиксирует форму, отправляемую через fetch, поэтому событие отправляет analytics.js | js/analytics.js:100 | form_id: order-form |
+| 6 | `form_submit` | авто → своё | Отправка формы заказа (то же: отправляет analytics.js) | js/analytics.js:103 | form_id: order-form |
 | 7 | `generate_lead` | рекоменд., ключевое | Приёмник ответил {"ok": true} | js/form.js:266 | lead_cleaning_type: deep; area_m2: 50; value: 8330; currency: RUB |
 | 8 | `cta_click` | своё | Клик по кнопке заявки | 404.html:68<br>calculator.html:117<br>index.html:68,69<br>office.html:77<br>services.html:78<br>subscription.html:94 | button_name: hero_calc_deep; page_section: hero |
 | 9 | `service_view` | своё | Клик по карточке услуги | index.html:87<br>services.html:65 | cleaning_type: deep |
@@ -22,9 +22,9 @@
 | 14 | `promo_copy` | своё | Кнопка «Скопировать» промокод | tips.html:79 | promo_code: CLEAN15 |
 | 15 | `contact_click` | своё, ключевое | Клик по телефону или e-mail | 404.html:56,84,85<br>calculator.html:56,134,135<br>contacts.html:56,146,147,169…<br>index.html:56,126,127<br>office.html:56,92,93<br>privacy.html:56,104,105 | contact_type: phone |
 | 16 | `messenger_click` | своё, ключевое | Клик по Telegram или WhatsApp | contacts.html:150,151 | messenger: telegram |
-| 17 | `social_click` | своё | Иконка соцсети в подвале или на thanks.html | 404.html:91<br>calculator.html:141<br>contacts.html:176<br>index.html:133<br>office.html:99<br>privacy.html:111 | network: vk; page_section: footer |
+| 17 | `social_click` | своё | Иконка соцсети в подвале или на thanks.html | 404.html:91<br>calculator.html:141<br>contacts.html:176<br>index.html:133<br>office.html:99<br>privacy.html:111 | network: instagram; page_section: footer |
 | 18 | `form_error` | своё | Ошибка поля или приёмника | js/form.js:210,276 | field_name: phone; error_type: format (required / length / format / range / server) |
-| 19 | `faq_open` | своё, по выбору | Раскрытие блока «Что входит» | index.html:94 | question_id: kitchen |
+| 19 | `faq_open` | своё, по выбору | Раскрытие блока «Что входит» | index.html:94<br>js/analytics.js:10 | question_id: kitchen |
 | 20 | `gallery_view` | своё, по выбору | Открытие фото «до и после» | index.html:101 | photo_index: 3 |
 
 ## Пользовательские параметры (Admin → Custom definitions, Event scope)
