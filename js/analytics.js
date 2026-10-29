@@ -89,16 +89,9 @@
     }
   }, true);
 
-  // form_start и form_submit. Расширенная статистика GA4 не фиксирует форму заказа,
-  // потому что она отправляется через fetch без перезагрузки страницы. Поэтому оба
-  // события отправляются отсюда с тем же параметром form_id, что и у автоматических.
-  var formStarted = {};
-  document.addEventListener('focusin', function (e) {
-    var form = e.target.form;
-    if (!form || !form.id || formStarted[form.id]) return;
-    formStarted[form.id] = true;
-    track('form_start', { form_id: form.id });
-  });
+  // form_submit. form_start расширенная статистика GA4 отправляет сама, а form_submit
+  // для формы заказа — нет: форма отправляется через fetch без перезагрузки страницы.
+  // Поэтому form_submit отправляется отсюда с тем же параметром form_id.
   document.addEventListener('submit', function (e) {
     if (e.target.id) track('form_submit', { form_id: e.target.id });
   }, true);
