@@ -10,8 +10,8 @@
 | 2 | `scroll` | авто | Прокрутка до 90 % | расширенная статистика GA4 (кода нет) | percent_scrolled: 90 |
 | 3 | `click` | авто | Переход на внешний сайт (соцсети, Telegram, WhatsApp) | расширенная статистика GA4 (кода нет) | link_url: https://t.me/chisty_list_manager; outbound: true |
 | 4 | `file_download` | авто | Скачивание PDF | services.html:73<br>tips.html:73 | file_name: /files/chek-list-rabot.pdf; file_extension: pdf |
-| 5 | `form_start` | авто → своё | Первое взаимодействие с формой заказа. Расширенная статистика не фиксирует форму, отправляемую через fetch, поэтому событие отправляет analytics.js | js/analytics.js:100 | form_id: order-form |
-| 6 | `form_submit` | авто → своё | Отправка формы заказа (то же: отправляет analytics.js) | js/analytics.js:103 | form_id: order-form |
+| 5 | `form_start` | авто | Первое взаимодействие с формой заказа | contacts.html:82 | form_id: order-form |
+| 6 | `form_submit` | авто → своё | Отправка формы заказа. Расширенная статистика не фиксирует форму, отправляемую через fetch, поэтому событие отправляет analytics.js | js/analytics.js:96 | form_id: order-form |
 | 7 | `generate_lead` | рекоменд., ключевое | Приёмник ответил {"ok": true} | js/form.js:266 | lead_cleaning_type: deep; area_m2: 50; value: 8330; currency: RUB |
 | 8 | `cta_click` | своё | Клик по кнопке заявки | 404.html:68<br>calculator.html:117<br>index.html:68,69<br>office.html:77<br>services.html:78<br>subscription.html:94 | button_name: hero_calc_deep; page_section: hero |
 | 9 | `service_view` | своё | Клик по карточке услуги | index.html:87<br>services.html:65 | cleaning_type: deep |
