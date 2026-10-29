@@ -4,7 +4,6 @@
 |---|---|
 | Сайт на Vercel | https://tz-20-klining-chistyy-list.vercel.app |
 | Таблица заявок «ChistyList — Orders» | https://docs.google.com/spreadsheets/d/1MYLZ5ozAAUECOPnRTeA8WHUX1SgO3LFF-N-rViOfo4U/edit |
-| Дашборд DataLens | ___ |
 | Instagram | https://www.instagram.com/nzzerae/ |
 | Reel «Кухня до и после» | https://www.instagram.com/nzzerae/reel/DfDUep7ObLp/ |
 
@@ -32,6 +31,8 @@
 ## Объём работ по каналам
 
 По решению преподавателя размещение ссылок выполняется только в Instagram: строки реестра U-01…U-04. ВКонтакте, Telegram, YouTube, блогеры и QR-код на магните (U-05…U-12) из задания исключены, поэтому короткие ссылки, `docs/qr-u-12.png` и `docs/afisha.pdf` не создаются.
+
+Дашборд DataLens (раздел 8.4) по решению преподавателя не выполняется.
 
 ## Реестр ссылок: выбор страниц и меток
 
