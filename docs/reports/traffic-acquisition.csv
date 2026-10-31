@@ -1,0 +1,5 @@
+# GA4 · Привлечение трафика; период 04.10.2026–31.10.2026 (последние 28 дней); параметр: основная группа каналов сеанса
+session_default_channel_group,sessions,engaged_sessions,engagement_rate,avg_engagement_time_per_session_sec,events_per_session,event_count,key_events,session_key_event_rate
+Direct,16,2,12.5%,1,4.13,66,0,0%
+Organic Social,9,5,55.56%,21,13.89,125,8,33.33%
+total,25,7,28%,8,7.64,191,8,12%

@@ -1,0 +1,5 @@
+# GA4 · Привлечение трафика; период 04.10.2026–31.10.2026; параметр: кампания сеанса
+session_campaign,sessions,engaged_sessions,engagement_rate,avg_engagement_time_per_session_sec,events_per_session,event_count,key_events,session_key_event_rate
+(direct),16,2,12.5%,1,4.13,66,0,0%
+newyear_cleaning_2026,8,5,62.5%,24,15.25,122,8,37.5%
+(referral),1,0,0%,0,3.00,3,0,0%
