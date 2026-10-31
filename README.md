@@ -6,6 +6,7 @@
 | Таблица заявок «ChistyList — Orders» | https://docs.google.com/spreadsheets/d/1MYLZ5ozAAUECOPnRTeA8WHUX1SgO3LFF-N-rViOfo4U/edit |
 | Instagram | https://www.instagram.com/nzzerae/ |
 | Reel «Кухня до и после» | https://www.instagram.com/nzzerae/reel/DfDUep7ObLp/ |
+| Telegram-канал «Чистый клининг» (U-07) | https://t.me/+rVug7c6VziIxMjli |
 
 Идентификатор ресурса GA4: `G-TCNW88BN83`
 
@@ -28,7 +29,7 @@
 
 ## Объём работ по каналам
 
-По решению преподавателя размещение ссылок выполняется только в Instagram: строки реестра U-01…U-04. ВКонтакте, Telegram, YouTube, блогеры и QR-код на магните (U-05…U-12) из задания исключены, поэтому короткие ссылки, `docs/qr-u-12.png` и `docs/afisha.pdf` не создаются.
+По решению преподавателя размещение ссылок выполняется в Instagram (строки реестра U-01…U-04); дополнительно сделан пост в Telegram-канале (U-07, страница tips.html, скриншот `screens/telegram/`). ВКонтакте, второе размещение в Telegram, YouTube, блогеры и QR-код на магните (U-05, U-06, U-08…U-12) из задания исключены, поэтому короткие ссылки, `docs/qr-u-12.png` и `docs/afisha.pdf` не создаются.
 
 Дашборд DataLens (раздел 8.4) и выдача доступа Viewer к GA4 по решению преподавателя не выполняются.
 

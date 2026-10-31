@@ -192,7 +192,8 @@ function setupUtmSheet() {
     ['U-01', 'Instagram', 'ссылка в шапке профиля', 'instagram', 'social', 'newyear_cleaning_2026', 'bio', 'index.html'],
     ['U-02', 'Instagram', 'автоответ под Reel (ManyChat)', 'instagram', 'social', 'newyear_cleaning_2026', 'reel_kitchen_01', 'tips.html'],
     ['U-03', 'Instagram', 'автоответ, ветка «ОФИС»', 'instagram', 'social', 'office_cleaning_2026', 'reel_kitchen_01_office', 'office.html'],
-    ['U-04', 'Instagram', 'ссылка-стикер в Stories', 'instagram', 'social', 'newyear_cleaning_2026', 'stories_01', 'calculator.html']
+    ['U-04', 'Instagram', 'ссылка-стикер в Stories', 'instagram', 'social', 'newyear_cleaning_2026', 'stories_01', 'calculator.html'],
+    ['U-07', 'Telegram', 'пост в канале «Чистый клининг»', 'telegram', 'social', 'newyear_cleaning_2026', 'post_01', 'tips.html']
   ];
   const ss = SpreadsheetApp.openById(SHEET_ID);
   const sheet = ss.getSheetByName('utm') || ss.insertSheet('utm');
