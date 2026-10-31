@@ -6,6 +6,7 @@
 | Таблица заявок «ChistyList — Orders» | https://docs.google.com/spreadsheets/d/1MYLZ5ozAAUECOPnRTeA8WHUX1SgO3LFF-N-rViOfo4U/edit |
 | Instagram | https://www.instagram.com/nzzerae/ |
 | Reel «Кухня до и после» | https://www.instagram.com/nzzerae/reel/DfDUep7ObLp/ |
+| Пост «Генеральная уборка к Новому году −15 %» | https://www.instagram.com/p/DfDUR4zOffs/ |
 | Telegram-канал «Чистый клининг» (U-07) | https://t.me/+rVug7c6VziIxMjli |
 
 Идентификатор ресурса GA4: `G-TCNW88BN83`
