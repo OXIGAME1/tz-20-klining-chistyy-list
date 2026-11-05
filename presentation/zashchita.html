@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Защита курсовой · ТЗ-20 «Чистый лист»</title>
+<style>
+  :root{--brand:#1592B5;--brand-dark:#0E6F8C;--green:#7DCB6A;--green-soft:#E9F6E5;--ink:#1E2A30;--muted:#4E5F68;--line:#D9E3E8;--soft:#F2F8FA}
+  @page{size:1280px 720px;margin:0}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#fff;color:var(--ink);font-family:Inter,Arial,sans-serif}
+  .slide{width:1280px;height:720px;position:relative;overflow:hidden;page-break-after:always;padding:56px 72px;display:flex;flex-direction:column}
+  .slide:last-child{page-break-after:auto}
+  h1,h2{font-family:Montserrat,Inter,sans-serif;margin:0;letter-spacing:-.01em}
+  h2{font-size:40px;font-weight:800;line-height:1.15;margin-bottom:28px}
+  h2 .accent{color:var(--brand)}
+  .num{position:absolute;right:40px;bottom:28px;font-size:20px;color:var(--muted);font-weight:600}
+  .logo{position:absolute;left:72px;bottom:28px;font-family:Montserrat;font-weight:800;font-size:18px;color:var(--brand-dark);letter-spacing:.08em}
+  p,li,td,th{font-size:24px;line-height:1.4}
+  .muted{color:var(--muted)}
+  .row{display:flex;gap:28px;flex:1;min-height:0;align-items:flex-start}
+  .shot{border:1px solid var(--line);border-radius:14px;box-shadow:0 6px 24px rgba(30,42,48,.08);overflow:hidden;background:#fff}
+  .shot img{display:block;width:100%}
+  .cap{font-size:20px;color:var(--muted);margin-top:10px}
+  .stat{background:var(--soft);border-radius:16px;padding:22px 24px;flex:1}
+  .stat b{display:block;font-family:Montserrat;font-weight:800;font-size:42px;color:var(--brand-dark);line-height:1.1}
+  .stat span{font-size:22px;color:var(--muted)}
+  table{border-collapse:collapse;width:100%}
+  th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:Montserrat;font-size:22px;color:var(--brand-dark)}
+  .pill{display:inline-block;background:var(--green-soft);color:#2F6B22;border-radius:999px;padding:6px 16px;font-size:20px;font-weight:600}
+.crop{overflow:hidden} .crop img{width:100%;height:100%;object-fit:cover}
+  .arrow{font-size:40px;color:var(--brand);align-self:center}
+  .title{background:linear-gradient(135deg,#1592B5 0%,#0E6F8C 100%);color:#fff;justify-content:center}
+  .title h1{font-size:56px;font-weight:800;line-height:1.1;margin:18px 0 22px}
+  .title p{font-size:26px;color:#DDF1F7}
+  .title .num,.title .logo{color:#DDF1F7}
+</style>
+</head>
+<body>
+
+<!-- 1 -->
+<section class="slide title">
+  <span class="pill" style="align-self:flex-start">ТЗ № ТЗ-20/2026 · ОП.03 «Информационные технологии»</span>
+  <h1>Сайт и сквозная аналитика заявок<br>для клининговой компании «Чистый лист»</h1>
+  <p>Вобленко Глеб Владимирович · группа 11/1-РПО-26/1</p>
+  <p style="margin-top:6px">tz-20-klining-chistyy-list.vercel.app · GA4 G-TCNW88BN83</p>
+  <span class="num">1</span>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <h2>Проблема заказчика: <span class="accent">цена вручную, источник неизвестен</span></h2>
+  <div class="row" style="flex:0 0 auto">
+    <div class="stat"><b>520</b><span>запросов цены в сентябре</span></div>
+    <div class="stat"><b>230</b><span>оформили заказ</span></div>
+    <div class="stat"><b>10–15 мин</b><span>менеджер считает цену вручную</span></div>
+    <div class="stat"><b>70 000 ₽</b><span>в месяц на продвижение</span></div>
+  </div>
+  <p style="margin-top:34px">Запросы приходят в Instagram, ВКонтакте, Telegram и по телефону. Компания не знает, какой канал приводит клиентов на регулярную уборку, хотя они дают основную выручку.</p>
+  <p class="muted">Источник: письмо генерального директора, ТЗ стр. 1.</p>
+  <span class="logo">ЧИСТЫЙ ЛИСТ</span><span class="num">2</span>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+  <h2>Схема решения</h2>
+  <div class="shot" style="padding:18px"><img src="../docs/scheme.png" alt="Схема работы"></div>
+  <p style="margin-top:28px">Соцсеть → ссылка с UTM-метками → сайт сохраняет метки → события в GA4 и заявка через Apps Script в Google Таблицу → отчёты и исследования.</p>
+  <span class="logo">ЧИСТЫЙ ЛИСТ</span><span class="num">3</span>
+</section>
+
+<!-- 4 -->
+<section class="slide">
+  <h2>Сайт: 9 страниц + 404 на Vercel</h2>
+  <div class="row">
+    <div style="flex:2.2"><div class="shot"><img src="../screens/kursovaya/01-site-home.png" alt="Главная"></div><div class="cap">Главная, 1280 px</div></div>
+    <div style="flex:.62"><div class="shot" style="height:420px"><img src="../screens/kursovaya/02-site-mobile.png" alt="Телефон"></div><div class="cap">Телефон, 375 px</div></div>
+    <div style="flex:1.1">
+      <div class="stat" style="margin-bottom:16px"><b>89 / 100 / 100 / 100</b><span>Lighthouse, телефон</span></div>
+      <p style="font-size:22px">Калькулятор цены с акцией −15 % и подпиской, выбор даты, форма заказа. Создан с помощью нейросети по ТЗ.</p>
+    </div>
+  </div>
+  <span class="logo">ЧИСТЫЙ ЛИСТ</span><span class="num">4</span>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+  <h2>Путь заявки: источник сохраняется до таблицы</h2>
+  <div class="row" style="align-items:center">
+    <div style="flex:1"><div class="shot crop" style="height:360px"><img src="../screens/kursovaya/04-form.png" alt="Форма" style="object-position:50% 72%"></div><div class="cap">Форма: дата, вид уборки, площадь</div></div>
+    <div class="arrow">→</div>
+    <div style="flex:1.25"><div class="shot"><img src="../screens/kursovaya/05-lead-in-sheet.png" alt="Таблица"></div><div class="cap">Лист leads: метки и статус заявки</div></div>
+  </div>
+  <p style="font-size:22px">Ссылка <code>…/contacts.html?utm_source=instagram&amp;utm_medium=social&amp;utm_campaign=newyear_cleaning_2026&amp;utm_content=bio</code> → заявка «Тест U-01» пришла с instagram / social / bio. Повторная отправка не создаёт дубль.</p>
+  <span class="logo">ЧИСТЫЙ ЛИСТ</span><span class="num">5</span>
+</section>
+
+<!-- 6 -->
+<section class="slide">
+  <h2>Instagram и Telegram → сайт</h2>
+  <div class="row">
+    <div style="flex:1"><div class="shot crop" style="height:440px"><img style="object-position:50% 0%" src="../screens/instagram/profile-bio-link.png" alt="Профиль"></div><div class="cap">U-01 ссылка в профиле</div></div>
+    <div style="flex:1"><div class="shot crop" style="height:440px"><img style="object-position:50% 40%" src="../screens/instagram/stories-01-link-sticker.png" alt="Stories"></div><div class="cap">U-04 стикер в Stories</div></div>
+    <div style="flex:1.55"><div class="shot crop" style="height:440px"><img src="../screens/telegram/post_01.png" alt="Telegram" style="object-position:0% 100%;width:auto;height:100%"></div><div class="cap">U-07 пост в Telegram-канале</div></div>
+  </div>
+  <span class="logo">ЧИСТЫЙ ЛИСТ</span><span class="num">6</span>
+</section>
+
+<!-- 7 -->
+<section class="slide">
+  <h2>GA4: 20 событий, 3 ключевых</h2>
+  <div class="row">
+    <div style="flex:1.5"><div class="shot"><img src="../screens/reports/traffic-campaign.png" alt="Кампании"></div><div class="cap">Привлечение трафика по кампаниям</div></div>
+    <div style="flex:1">
+      <p><b>Ключевые:</b> generate_lead, contact_click, messenger_click</p>
+      <p><b>Свои события:</b> cta_click, service_view, cleaning_calc, date_select, promo_copy и др. — 14</p>
+      <p><b>7 параметров:</b> cleaning_type, button_name, frequency…</p>
+      <p class="muted">Каждое проверено в DebugView.</p>
+    </div>
+  </div>
+  <span class="logo">ЧИСТЫЙ ЛИСТ</span><span class="num">7</span>
+</section>
+
+<!-- 8 -->
+<section class="slide">
+  <h2>Воронка: <span class="accent">95,5 % теряется до карточки услуги</span></h2>
+  <div class="row">
+    <div style="flex:1.5"><div class="shot"><img src="../screens/explore/funnel-1-open-source.png" alt="Воронка"></div><div class="cap">Открытая воронка, разбивка по источнику сеанса</div></div>
+    <div style="flex:1">
+      <p>page_view → service_view → cta_click → form_start → generate_lead</p>
+      <p><b>22 → 1</b> пользователь на втором шаге.</p>
+      <p><b>Гипотеза:</b> посетители из соцсетей идут сразу в калькулятор и форму, минуя карточки услуг. Проверка — сравнить пути из Instagram и прямых заходов за 2 недели.</p>
+    </div>
+  </div>
+  <span class="logo">ЧИСТЫЙ ЛИСТ</span><span class="num">8</span>
+</section>
+
+<!-- 9 -->
+<section class="slide">
+  <h2>Каналы: Instagram меньше, но качественнее</h2>
+  <div class="row">
+    <div style="flex:1.45"><div class="shot"><img src="../screens/reports/comparison-instagram-direct.png" alt="Сравнение"></div><div class="cap">Сравнение instagram и (direct)</div></div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:16px">
+      <div class="stat"><b>62,5 %</b><span>доля взаимодействия, Instagram (8 сеансов)</span></div>
+      <div class="stat"><b>12,5 %</b><span>прямые заходы (16 сеансов)</span></div>
+      <p style="font-size:22px">Все 8 ключевых событий — из кампании newyear_cleaning_2026, лучше всех Reel (7).</p>
+    </div>
+  </div>
+  <span class="logo">ЧИСТЫЙ ЛИСТ</span><span class="num">9</span>
+</section>
+
+<!-- 10 -->
+<section class="slide">
+  <h2>Что получил бизнес</h2>
+  <table>
+    <tr><th>Было</th><th>Стало</th></tr>
+    <tr><td>цена считается вручную 10–15 минут</td><td>калькулятор на сайте считает сразу</td></tr>
+    <tr><td>запросы в личных сообщениях соцсетей</td><td>все заявки в одной таблице со статусом</td></tr>
+    <tr><td>источник клиента неизвестен</td><td>у каждой заявки есть source, medium, campaign, content</td></tr>
+    <tr><td>70 000 ₽ «по ощущениям»</td><td>сеансы и ключевые события по каждому каналу в GA4</td></tr>
+  </table>
+  <p style="margin-top:24px"><b>Рекомендация:</b> вести ссылку из Reel и профиля сразу на калькулятор и сравнить ключевые события на 100 сеансов до и после. <span class="muted">Данные пока тестовые.</span></p>
+  <span class="logo">ЧИСТЫЙ ЛИСТ</span><span class="num">10</span>
+</section>
+
+<!-- 11 -->
+<section class="slide">
+  <h2>Как помог ИИ и что было сложно</h2>
+  <ul style="margin:0;padding-left:28px">
+    <li>ИИ: генерация кода сайта, помощь с настройкой GA4, таблицы и отчётов, решение проблем при настройке — журнал в <code>docs/prompts.md</code>.</li>
+    <li style="margin-top:14px">Сложно: форма отправляется через fetch, поэтому <code>form_submit</code> пришлось отправлять из кода — автоматически GA4 его не видит.</li>
+    <li style="margin-top:14px">Не получилось: ManyChat — вход в Instagram через VPN блокируется, автоответы не настроены. DataLens по решению преподавателя не делался.</li>
+  </ul>
+  <span class="logo">ЧИСТЫЙ ЛИСТ</span><span class="num">11</span>
+</section>
+
+<!-- 12 -->
+<section class="slide">
+  <h2>Ссылки</h2>
+  <div class="row" style="align-items:center">
+    <div style="flex:1.6">
+      <p><b>Сайт:</b> tz-20-klining-chistyy-list.vercel.app</p>
+      <p><b>Репозиторий:</b> github.com/OXIGAME1/tz-20-klining-chistyy-list</p>
+      <p><b>Таблица заявок:</b> ChistyList — Orders (доступ по ссылке)</p>
+      <p><b>Instagram:</b> instagram.com/nzzerae</p>
+      <p><b>GA4:</b> G-TCNW88BN83</p>
+    </div>
+    <div style="flex:1;text-align:center"><img src="qr-repo.png" alt="QR репозиторий" style="width:260px"><div class="cap">репозиторий</div></div>
+    <div style="flex:1;text-align:center"><img src="qr-site.png" alt="QR сайт" style="width:260px"><div class="cap">сайт</div></div>
+  </div>
+  <span class="logo">ЧИСТЫЙ ЛИСТ</span><span class="num">12</span>
+</section>
+
+</body>
+</html>

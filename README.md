@@ -8,6 +8,9 @@
 | Reel «Кухня до и после» | https://www.instagram.com/nzzerae/reel/DfDUep7ObLp/ |
 | Пост «Генеральная уборка к Новому году −15 %» | https://www.instagram.com/p/DfDUR4zOffs/ |
 | Telegram-канал «Чистый клининг» (U-07) | https://t.me/+rVug7c6VziIxMjli |
+| Описание работы | [docs/opisanie.md](docs/opisanie.md) |
+| Схема работы | [docs/scheme.png](docs/scheme.png) |
+| Презентация к защите | [presentation/zashchita.pdf](presentation/zashchita.pdf) (исходник — [zashchita.html](presentation/zashchita.html)) |
 
 Идентификатор ресурса GA4: `G-TCNW88BN83`
 
